@@ -1,0 +1,23 @@
+/* footer style */
+.footer {
+    padding: 20px;
+    background: linear-gradient(#d19041, #c55a6f);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-text {
+    color: #fff;
+    margin: 0;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}

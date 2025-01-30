@@ -1,0 +1,89 @@
+.header-navbar {
+    width: auto;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.home-btn {
+    max-width: 70px;
+    transform: scale(1.15);
+    animation: pulse 2s infinite;
+}
+
+.my-btn {
+    max-width: 160px;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-decoration: none;
+    text-align: center;
+    transition: all .5s ease;
+}
+
+.btn--action {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.8rem;
+    background-color: #f6e58d;
+    color: #000;
+    transition: all .5s ease 0s;
+    box-shadow: 0 8px #f7c71d,
+        0 10px 10px rgba(0, 0, 0, 1);
+}
+
+.hide {
+    display: none;
+}
+
+.btn--action span {
+    display: inline-block;
+    position: relative;
+    transition: all .5s ease;
+}
+
+.btn--action span:before {
+    content: '▶️';
+    color: #000;
+    font-size: 1rem;
+    display: inline-block;
+    position: absolute;
+    top: 1px;
+    left: 1.5rem;
+    opacity: 0;
+    transition: all .1s ease 0s;
+}
+
+.btn--action:hover span {
+    padding-left: 1.85rem;
+}
+
+.btn--action:hover span:before {
+    left: 0;
+    opacity: 1;
+}
+
+.btn--action:active {
+    box-shadow: 0 5px #f0932b;
+    transform: translateY(5px);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 0 0 rgba(0, 0, 0, 0.7));
+    }
+
+    70% {
+        transform: scale(1.25);
+        filter: drop-shadow(0 0 0 10px rgba(0, 0, 0, 0));
+    }
+
+    100% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 0 0 rgba(0, 0, 0, 0));
+    }
+}

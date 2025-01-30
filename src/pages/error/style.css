@@ -1,0 +1,15 @@
+.error-page {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.error-image {
+    width: 100%;
+    max-width: 500px;
+}
+
+.error-text {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 50px;
+}

@@ -1,0 +1,15 @@
+.game-container {
+    width: 100%;
+    min-height: 100vh;
+    background: url('./bg2.jpg') no-repeat center center / cover;
+    padding: 50px 0;
+}
+
+.game-content {
+    padding: 30px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255, 0.5);
+    border-radius: 10px;
+}

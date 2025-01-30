@@ -1,0 +1,84 @@
+@import url('./fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fredoka", sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* keyframes */
+@keyframes shake {
+    0% {
+        transform: skewY(-15deg);
+    }
+
+    5% {
+        transform: skewY(15deg);
+    }
+
+    10% {
+        transform: skewY(-15deg);
+    }
+
+    15% {
+        transform: skewY(15deg);
+    }
+
+    20% {
+        transform: skewY(0deg);
+    }
+
+    100% {
+        transform: skewY(0deg);
+    }
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(5px, 5px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(0, 0) rotate(0eg);
+    }
+
+    75% {
+        transform: translate(-5px, 5px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes skew-x-shakeng {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0eg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
