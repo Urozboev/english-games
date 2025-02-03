@@ -1,15 +1,17 @@
 export const Data = [
-    { id: 1, title: "Son-sanoq va miqdorlar", routeName: "numbers", image: "/assets/images/animals-title.gif" },
-    { id: 2, title: "Kattaliklar", routeName: "sizes", image: "/assets/images/fish-title.gif" },
-    { id: 3, title: "Geometrik shakllar", routeName: "shapes", image: "/assets/images/forests-deserts-title.gif" },
-    { id: 4, title: "Fazoviy tasavvurlar", routeName: "routes", image: "/assets/images/mountains-title.gif" },
-    { id: 5, title: "Vaqtga qarab mòljal olish", routeName: "times", image: "/assets/images/garden-title.gif" },
+    { "WordSortGame": { text: "The game is working fine." } },
+    { "FillInTheBlanksGame": { sentence: "The ___ is red and the ___ is blue.", correctAnswers: ['apple', 'sky'], allOptions: ['apple', 'sky', 'banana', 'ocean'] } },
+    {
+        "WordImageGame": {
+            initialWords: ['Apple', 'Banana', 'Cherry', 'Kiwi'],
+            initialImages: [
+                { id: 1, src: 'https://t4.ftcdn.net/jpg/02/52/93/81/360_F_252938192_JQQL8VoqyQVwVB98oRnZl83epseTVaHe.jpg', word: 'Apple' },
+                { id: 2, src: "https://static.wixstatic.com/media/53e8bb_a1e88e551162485eb4ff962437300872~mv2.jpeg/v1/crop/x_0,y_105,w_1024,h_919/fill/w_560,h_560,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Banana.jpeg", word: 'Banana' },
+                { id: 3, src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ZOawtuIvO8EDc-6oVm8c2hgQkoL3Qn0Y8Q&s", word: 'Cherry' },
+                { id: 4, src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Kiwi_%28Actinidia_chinensis%29_1_Luc_Viatour_edit.jpg/640px-Kiwi_%28Actinidia_chinensis%29_1_Luc_Viatour_edit.jpg', word: 'Kiwi' },
+            ]
+        }
+    },
+    { "PronunciationGame": { text: "apple" } },
+    { "PuzzleImageGame": { imgLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJ3xNTmn2uHnn_rjwt3oMaoNAnjtbHXRl2A&s", key: "english" } }
 ]
-
-export const Data1 = {
-    numbers: { id: 1, title: "Son-sanoq va miqdorlar", routeName: "numbers", poster: "", videoLink: "", music: "http://streaming.tdiradio.com:8000/house.mp3" },
-    sizes: { id: 2, title: "Kattaliklar", routeName: "sizes", poster: "", videoLink: "", music: "http://streaming.tdiradio.com:8000/house.mp3" },
-    shapes: { id: 3, title: "Geometrik shakllar", routeName: "shapes", poster: "", videoLink: "", music: "" },
-    routes: { id: 4, title: "Fazoviy tasavvurlar", routeName: "routes", poster: "", videoLink: "", music: "" },
-    times: { id: 5, title: "Vaqtga qarab mòljal olish", routeName: "times", poster: "/assets/images/garden-poster.jpg", videoLink: "", music: "" },
-}

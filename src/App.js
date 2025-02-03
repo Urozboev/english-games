@@ -18,14 +18,7 @@ function App() {
         <Route path="games/:contentName" element={<Game />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-
-
-
-
       <Footer />
-
-
-
     </div>
   );
 }

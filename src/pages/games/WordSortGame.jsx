@@ -4,6 +4,7 @@ import { SortableContext, arrayMove, useSortable, rectSortingStrategy } from "@d
 import { CSS } from "@dnd-kit/utilities";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Confetti from 'react-confetti';
 
 // So'zlarni aralashtirish uchun yordamchi funksiya
 const shuffleArray = (array) => {
@@ -35,14 +36,13 @@ const SortableItem = ({ id }) => {
   );
 };
 
-const WordSortGame = () => {
-  const originalSentence = "The game is working fine."; // Asl jumla
+const WordSortGame = ({ counter, data }) => {
+  const originalSentence = data['text'];
   const [userWords, setUserWords] = useState(shuffleArray(originalSentence.split(" "))); // So'zlar aralashtirilgan
 
   const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [shake, setShake] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false); // Confetti uchun state
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
@@ -58,14 +58,26 @@ const WordSortGame = () => {
 
   const checkAnswer = () => {
     if (userWords.join(" ") === originalSentence) {
-      return "To'g'ri! 🎉";
+      setShake(false);
+      setShowConfetti(true); // Confetti ishlatish
+      // setTimeout(() => setShowConfetti(false), 5000); // 5 soniyadan so'ng confetti to'xtatish
+      setShow(true)
     } else {
-      return "Xato. Qayta urinib ko'ring! ❌";
+      setShake(true);
+      setTimeout(() => setShake(false), 1000);
     }
   };
 
+  // Modal ochilganda natijani tekshirish
+  // useEffect(() => {
+  //   if (show) {
+  //     checkAnswer();
+  //   }
+  // }, [show]);
+
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
+    <div className={shake ? 'shake' : ''} style={{ padding: "20px", textAlign: "center" }}>
+      {showConfetti && <Confetti />}
       <h1>So'zlarni to'g'ri tartibga soling</h1>
       <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <SortableContext items={userWords} strategy={rectSortingStrategy}>
@@ -78,8 +90,7 @@ const WordSortGame = () => {
       </DndContext>
 
       <button
-        onClick={handleShow}
-        // onClick={checkAnswer}
+        onClick={checkAnswer}
         style={{
           padding: "10px 20px",
           fontSize: "16px",
@@ -95,22 +106,17 @@ const WordSortGame = () => {
       </button>
       <Modal
         show={show}
-        onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Natijangiz</Modal.Title>
-        </Modal.Header>
         <Modal.Body>
-          <h1>{checkAnswer()}</h1>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Yopish
+          <Button onClick={counter} variant="primary" className='w-100'>
+            Keyingi
           </Button>
-          <Button variant="primary">Keyingisi</Button>
-        </Modal.Footer>
+        </Modal.Body>
       </Modal>
     </div>
   );
