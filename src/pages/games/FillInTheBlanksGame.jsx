@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Badge, Button, Modal } from 'react-bootstrap';
+import { Badge, Modal } from 'react-bootstrap';
 import Confetti from 'react-confetti';
+import { DoubleRightOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -23,7 +25,7 @@ const FillInTheBlanksGame = ({ counter, data }) => {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
-        if (selectedWords.length === 2) {
+        if (selectedWords.length === correctAnswers.length) {
             if (selectedWords.join(',') === correctAnswers.join(',')) {
                 setResult("To'g'ri! 🎉");
                 setShowConfetti(true);
@@ -72,12 +74,14 @@ const FillInTheBlanksGame = ({ counter, data }) => {
             <div>
                 {options.map((word, index) => (
                     <Button
+                        size='large'
                         key={index}
                         onClick={() => handleSelectWord(word)}
                         style={{
                             marginRight: '8px',
                         }}
-                        variant={selectedWords.includes(word) ? 'secondary' : 'primary'}
+                        variant={selectedWords.includes(word) ? 'dashed' : 'outlined'}
+                        color={selectedWords.includes(word) ? 'primary' : 'default'}
                     >
                         {word}
                     </Button>
@@ -92,7 +96,7 @@ const FillInTheBlanksGame = ({ counter, data }) => {
                 centered
             >
                 <Modal.Body>
-                    <Button onClick={counter} variant="primary" className='w-100'>
+                    <Button onClick={counter} type="primary" size='large' className='w-100' icon={<DoubleRightOutlined />}>
                         Keyingi
                     </Button>
                 </Modal.Body>

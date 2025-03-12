@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
+import { AudioOutlined, DoubleRightOutlined } from '@ant-design/icons';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Confetti from 'react-confetti';
+import MyButton from '../../components/navbar/button/MyButton';
+import { Button, Flex } from 'antd';
+import Title from 'antd/es/typography/Title';
 
 const PronunciationGame = ({ counter, data }) => {
   const [word, setWord] = useState(data['text']);
@@ -28,11 +32,11 @@ const PronunciationGame = ({ counter, data }) => {
   return (
     <div className={shake ? 'shake' : ''}>
       {showConfetti && <Confetti />}
-      < h1 > So'zni To'g'ri Talaffuz Qilish</h1>
-      < p > So'z: {word}</p>
-      < button onClick={SpeechRecognition.startListening} > Ovozni yozishni boshlash</button >
-      <button onClick={checkPronunciation}>Talaffuzni tekshirish</button>
-      <p>Siz aytgan so'z: {transcript}</p>
+      <h2 style={{ textTransform: 'uppercase', textAlign: 'center' }}>So'zni To'g'ri Talaffuz Qilish</h2>
+      <Flex align='baseline' gap='middle'> So'z: <Title level={4} style={{ textTransform: 'uppercase' }} type="success">{word}</Title></Flex>
+      <Button size='large' color="primary" variant="dashed" onClick={SpeechRecognition.startListening} icon={<AudioOutlined />}> Ovozni yozishni boshlash</Button >
+      <MyButton onClick={checkPronunciation}>Talaffuzni tekshirish</MyButton>
+      <Flex align='baseline' gap='middle'> Siz aytgan so'z: <Title level={4} style={{ textTransform: 'uppercase' }} type="warning">{transcript}</Title></Flex>
 
       <Modal
         show={show}
@@ -43,7 +47,7 @@ const PronunciationGame = ({ counter, data }) => {
         centered
       >
         <Modal.Body>
-          <Button onClick={counter} variant="primary" className='w-100'>
+          <Button onClick={counter} type="primary" size='large' className='w-100' icon={<DoubleRightOutlined />}>
             Keyingi
           </Button>
         </Modal.Body>

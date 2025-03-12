@@ -14,8 +14,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/contents" element={<Content />} /> */}
-        <Route path="games/:contentName" element={<Game />} />
+        <Route path="/games/:contentName" element={<Game />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

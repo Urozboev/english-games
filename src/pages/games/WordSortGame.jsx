@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, arrayMove, useSortable, rectSortingStrategy } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Confetti from 'react-confetti';
+import MyButton from "../../components/navbar/button/MyButton";
+import { DoubleRightOutlined } from "@ant-design/icons";
+import { Button } from "antd";
 
-// So'zlarni aralashtirish uchun yordamchi funksiya
 const shuffleArray = (array) => {
   return array
     .map((word) => ({ word, sort: Math.random() }))
@@ -14,7 +15,6 @@ const shuffleArray = (array) => {
     .map(({ word }) => word);
 };
 
-// Har bir so'z uchun sortable element
 const SortableItem = ({ id }) => {
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
@@ -89,7 +89,7 @@ const WordSortGame = ({ counter, data }) => {
         </SortableContext>
       </DndContext>
 
-      <button
+      <MyButton
         onClick={checkAnswer}
         style={{
           padding: "10px 20px",
@@ -103,7 +103,7 @@ const WordSortGame = ({ counter, data }) => {
         }}
       >
         Javobni tekshirish
-      </button>
+      </MyButton>
       <Modal
         show={show}
         backdrop="static"
@@ -113,7 +113,7 @@ const WordSortGame = ({ counter, data }) => {
         centered
       >
         <Modal.Body>
-          <Button onClick={counter} variant="primary" className='w-100'>
+          <Button onClick={counter} type="primary" size='large' className='w-100' icon={<DoubleRightOutlined />}>
             Keyingi
           </Button>
         </Modal.Body>

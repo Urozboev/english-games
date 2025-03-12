@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import Confetti from 'react-confetti';
-import { Button, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
+import { Button } from 'antd';
+import MyButton from '../../components/navbar/button/MyButton';
+import { ReloadOutlined, LoadingOutlined, DoubleRightOutlined } from '@ant-design/icons';
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -76,13 +79,13 @@ const WordImageGame = ({ counter, data }) => {
     <DndProvider backend={HTML5Backend}>
       <div className={shake ? 'shake' : ''}>
         {showConfetti && <Confetti />}
-        <button onClick={shuffleGame} style={{ marginBottom: '20px' }}>
+        <Button type='primary' size='large' onClick={shuffleGame} style={{ marginBottom: '20px' }} icon={<ReloadOutlined />}>
           Yangilash
-        </button>
-        <button onClick={checkAnswers} style={{ marginBottom: '20px', marginLeft: '10px' }}>
+        </Button>
+        <MyButton onClick={checkAnswers} style={{ marginBottom: '20px', marginLeft: '10px' }}>
           Tekshirish
-        </button>
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        </MyButton>
+        <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
           <div>
             <h2>Words</h2>
             {words.map((word, index) => (
@@ -108,7 +111,7 @@ const WordImageGame = ({ counter, data }) => {
         centered
       >
         <Modal.Body>
-          <Button onClick={counter} variant="primary" className='w-100'>
+          <Button onClick={counter} type="primary" size='large' className='w-100' icon={<DoubleRightOutlined />}>
             Keyingi
           </Button>
         </Modal.Body>
@@ -127,18 +130,23 @@ const Word = ({ word, onDrop }) => {
   });
 
   return (
-    <div
+    <Button
+      color="primary"
+      variant="dashed"
+      size='large'
       ref={drag}
       style={{
+        display: 'block',
         opacity: isDragging ? 0.5 : 1,
-        padding: '10px',
+        // padding: '10px',
         margin: '10px',
-        border: '1px solid black',
         cursor: 'move',
+        fontWeight: 700
       }}
+      icon={<LoadingOutlined />}
     >
       {word}
-    </div>
+    </Button>
   );
 };
 
@@ -161,11 +169,12 @@ const Image = ({ image, onDrop }) => {
       style={{
         padding: '10px',
         margin: '10px',
-        border: '1px solid black',
+        border: '1px solid #1677ff',
+        borderRadius: '5px',
         backgroundColor: isOver ? 'lightgrey' : 'white',
       }}
     >
-      <img src={image.src} alt={image.word} style={{ width: '100px', height: '100px' }} />
+      <img src={image.src} alt={image.word} style={{ width: '80px', height: '80px' }} />
     </div>
   );
 };
@@ -191,7 +200,7 @@ const DragPreview = ({ lines }) => {
             y1={line.y1}
             x2={line.x2}
             y2={line.y2}
-            stroke="blue"
+            stroke="#1677ff"
             strokeWidth="2"
           />
         ))}
