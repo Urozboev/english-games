@@ -6,7 +6,7 @@ import WordImageGame from './WordImageGame';
 import PronunciationGame from './PronunciationGame';
 import FillInTheBlanksGame from './FillInTheBlanksGame';
 import { Data } from '../../utils/Data';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Flex, Input } from 'antd';
 import { DownloadOutlined, HomeOutlined } from '@ant-design/icons';
 
@@ -17,9 +17,15 @@ function Game() {
     const [isGameFinished, setIsGameFinished] = useState(false);
     const [userName, setUserName] = useState('');
     const canvasRef = useRef(null);
+    const navigate = useNavigate()
 
     // Shuffle qilish funksiyasi
     useEffect(() => {
+        if (!contentName || !Data[contentName]) {
+            navigate('/404');
+            return;
+        }
+
         const shuffleArray = (array) => {
             let shuffled = array.slice();
             for (let i = shuffled.length - 1; i > 0; i--) {
@@ -29,8 +35,8 @@ function Game() {
             return shuffled;
         };
 
-        setShuffledGames(shuffleArray(Data[contentName])); // Faqat bir marta shuffle
-    }, [contentName]);
+        setShuffledGames(shuffleArray(Data[contentName]));
+    }, [contentName, navigate]);
 
     // Keyingi o‘yinga o‘tish
     const nextGame = () => {

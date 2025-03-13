@@ -167,14 +167,14 @@ const Image = ({ image, onDrop }) => {
     <div
       ref={drop}
       style={{
-        padding: '10px',
+        padding: '5px',
         margin: '10px',
         border: '1px solid #1677ff',
         borderRadius: '5px',
         backgroundColor: isOver ? 'lightgrey' : 'white',
       }}
     >
-      <img src={image.src} alt={image.word} style={{ width: '80px', height: '80px' }} />
+      <img src={image.src} alt={image.word} style={{ width: '80px', height: '80px', objectFit: 'cover' }} />
     </div>
   );
 };

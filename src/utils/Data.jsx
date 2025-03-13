@@ -7,10 +7,10 @@ const seasons = [
         "WordImageGame": {
             initialWords: ['Winter', 'Autumn', 'Spring', 'Summer'],
             initialImages: [
-                { id: 1, src: 'https://media.istockphoto.com/id/157639332/photo/winter-landscape-with-snow-and-trees.jpg?s=612x612&w=0&k=20&c=B-AXPVccjc0RZfFAx3BiiJFriyK4cDr5UatnDNY748s=', word: 'Winter' },
-                { id: 2, src: "https://media.istockphoto.com/id/1176602671/photo/falling-autumn-leaves-before-sunset.jpg?s=612x612&w=0&k=20&c=q5syXIvFQOw1VQjXKZifqNkM44pkv7Gu8TG52TG7e7s=", word: 'Autumn' },
-                { id: 3, src: "https://media.istockphoto.com/id/674833094/photo/cherry-tree-blossom.jpg?s=612x612&w=0&k=20&c=Mcdqod2YZRzIbP3juutyYe2warEFMWHrBsvOoB1xFAc=", word: 'Spring' },
-                { id: 4, src: 'https://miro.medium.com/v2/resize:fit:1400/0*1DtL639ZXJQj8ZDA.jpg', word: 'Summer' },
+                { id: 1, src: '/assets/images/winter1.jpg', word: 'Winter' },
+                { id: 2, src: "/assets/images/autumn1.jpg", word: 'Autumn' },
+                { id: 3, src: "/assets/images/spring1.jpg", word: 'Spring' },
+                { id: 4, src: '/assets/images/summer1.jpg', word: 'Summer' },
             ]
         }
     },
@@ -18,10 +18,10 @@ const seasons = [
         "WordImageGame": {
             initialWords: ['Snowman', 'Rainbow', 'Sunflower', 'Snowflake'],
             initialImages: [
-                { id: 1, src: 'https://media.istockphoto.com/id/629653980/photo/snowman.jpg?s=612x612&w=0&k=20&c=Mbsnibgwa0VuiwcJQLrzchvPqWnI9GIYVFdGPttx4eE=', word: 'Snowman' },
-                { id: 2, src: "https://st3.depositphotos.com/1003352/16380/i/450/depositphotos_163808604-stock-photo-spring-bloom-1.jpg", word: 'Rainbow' },
-                { id: 3, src: "https://t4.ftcdn.net/jpg/01/69/35/55/360_F_169355573_FY3tBkkBbk5EuN1lpEij4dqe1biNLK1R.jpg", word: 'Sunflower' },
-                { id: 4, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeDPI2-BJO_IZBtQV9xOdFkceLjfYnUwZIAg&s', word: 'Snowflake' },
+                { id: 1, src: '/assets/images/snowman.jpg', word: 'Snowman' },
+                { id: 2, src: "/assets/images/rainbow.jpg", word: 'Rainbow' },
+                { id: 3, src: "/assets/images/sunflower.jpg", word: 'Sunflower' },
+                { id: 4, src: '/assets/images/snowflake.jpg', word: 'Snowflake' },
             ]
         }
     },
@@ -33,10 +33,10 @@ const seasons = [
     { "PronunciationGame": { text: "Snowflake" } },
     { "PronunciationGame": { text: "Blossom" } },
     { "PronunciationGame": { text: "Sunshine" } },
-    { "PuzzleImageGame": { imgLink: "https://static.vecteezy.com/system/resources/previews/015/936/079/non_2x/3d-text-winter-market-file-vector.jpg", key: "Winter" } },
-    { "PuzzleImageGame": { imgLink: "https://img.freepik.com/free-vector/realistic-text-illustration-fall-season-celebration_23-2150678186.jpg", key: "Autumn" } },
-    { "PuzzleImageGame": { imgLink: "https://thumbs.dreamstime.com/b/vector-spring-text-design-colorful-realistic-elements-like-flowers-vines-background-illustration-66925666.jpg", key: "Spring" } },
-    { "PuzzleImageGame": { imgLink: "https://img.freepik.com/premium-vector/summer-3d-editable-text-style-effect_57516-987.jpg", key: "Summer" } }
+    { "PuzzleImageGame": { imgLink: "/assets/images/wintertext.jpg", key: "Winter" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/autumntext.avif", key: "Autumn" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/springtext.webp", key: "Spring" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/summertext.avif", key: "Summer" } }
 ]
 
 const animals = [
@@ -52,10 +52,10 @@ const animals = [
         "WordImageGame": {
             initialWords: ['Lion', 'Elephant', 'Tiger', 'Parrot'],
             initialImages: [
-                { id: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg', word: 'Lion' },
-                { id: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg', word: 'Elephant' },
-                { id: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Tiger.50.jpg', word: 'Tiger' },
-                { id: 4, src: 'https://imagedelivery.net/0ObHXyjKhN5YJrtuYFSvjQ/i-099e06d2-bfae-4534-b2cc-559ffdcbbb6a-macaw-parrot-yellow-and-blue-bird-12x18-print-andy-evans-photos/display', word: 'Parrot' },
+                { id: 1, src: '/assets/images/lion.jpg', word: 'Lion' },
+                { id: 2, src: '/assets/images/elephant.jpg', word: 'Elephant' },
+                { id: 3, src: '/assets/images/tiger.jpg', word: 'Tiger' },
+                { id: 4, src: '/assets/images/parrot.avif', word: 'Parrot' },
             ]
         }
     },
@@ -63,10 +63,10 @@ const animals = [
     { "PronunciationGame": { text: "Tiger" } },
     { "PronunciationGame": { text: "Parrot" } },
     { "PronunciationGame": { text: "Lion" } },
-    { "PuzzleImageGame": { imgLink: "https://cdn.textstudio.com/output/sample/normal/1/7/8/4/lion-logo-73-4871.png", key: "Lion" } },
-    { "PuzzleImageGame": { imgLink: "https://cdn.textstudio.com/output/sample/normal/6/2/9/6/elephant-logo-73-6926.png", key: "Elephant" } },
-    { "PuzzleImageGame": { imgLink: "https://cdn.textstudio.com/output/sample/normal/4/1/9/6/tiger-logo-73-6914.png", key: "Tiger" } },
-    { "PuzzleImageGame": { imgLink: "https://cdn.textstudio.com/output/sample/normal/3/4/9/6/parrot-logo-73-6943.png", key: "Parrot" } }
+    { "PuzzleImageGame": { imgLink: "/assets/images/liontext.png", key: "Lion" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/elephanttext.png", key: "Elephant" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/tigertext.png", key: "Tiger" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/parrottext.png", key: "Parrot" } }
 ];
 
 const familyAndFriends = [
@@ -82,10 +82,10 @@ const familyAndFriends = [
         "WordImageGame": {
             initialWords: ['Mother', 'Father', 'Grandparents', 'Friend'],
             initialImages: [
-                { id: 1, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2kYRh8XaskjEVDQ0fY2bVOZYkdYZPCbFeKQ&s', word: 'Mother' },
-                { id: 2, src: 'https://static.vecteezy.com/system/resources/previews/045/743/102/non_2x/father-and-son-vector.jpg', word: 'Father' },
-                { id: 3, src: 'https://psychologybenefits.org/wp-content/uploads/2016/11/blog-grandparents.jpg', word: 'Grandparents' },
-                { id: 4, src: 'https://jedfoundation.org/wp-content/uploads/2021/03/How-to-Follow-Your-Instincts-When-Worried-About-a-Friend-scaled.jpeg', word: 'Friend' },
+                { id: 1, src: '/assets/images/mother.jpg', word: 'Mother' },
+                { id: 2, src: '/assets/images/father.jpg', word: 'Father' },
+                { id: 3, src: '/assets/images/grandparents.jpg', word: 'Grandparents' },
+                { id: 4, src: '/assets/images/friend.jpg', word: 'Friend' },
             ]
         }
     },
@@ -93,10 +93,10 @@ const familyAndFriends = [
     { "PronunciationGame": { text: "Father" } },
     { "PronunciationGame": { text: "Grandparents" } },
     { "PronunciationGame": { text: "Friend" } },
-    { "PuzzleImageGame": { imgLink: "https://thumbs.dreamstime.com/b/floral-family-text-colorful-blossoms-blue-background-global-day-351990640.jpg", key: "Family" } },
-    { "PuzzleImageGame": { imgLink: "https://c8.alamy.com/comp/2CCENMG/word-friends-written-with-color-sponge-2CCENMG.jpg", key: "Friends" } },
-    { "PuzzleImageGame": { imgLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVQw6oB5ffkB4v0lqw2RVer5g2a8LTuOGyqQ&s", key: "Brother" } },
-    { "PuzzleImageGame": { imgLink: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2iqGoxGLnNZjuPViIPO0jr3rsP50tEAufjA&s", key: "Father" } }
+    { "PuzzleImageGame": { imgLink: "/assets/images/familytext.webp", key: "Family" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/friendstext.jpg", key: "Friends" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/brothertext.jpg", key: "Brother" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/fathertext.jpg", key: "Father" } }
 ];
 
 const fairyTales = [
@@ -112,10 +112,10 @@ const fairyTales = [
         "WordImageGame": {
             initialWords: ['Cinderella', 'Jack', 'Wolf', 'Snow White'],
             initialImages: [
-                { id: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Cinderella_and_Prince.jpg', word: 'Cinderella' },
-                { id: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Jack_and_beanstalk.jpg', word: 'Jack' },
-                { id: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/d/d2/Wolf_in_forest.jpg', word: 'Wolf' },
-                { id: 4, src: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Snow_White_and_the_Seven_Dwarfs.jpg', word: 'Snow White' },
+                { id: 1, src: '/assets/images/cinderella.webp', word: 'Cinderella' },
+                { id: 2, src: '/assets/images/jack.webp', word: 'Jack' },
+                { id: 3, src: '/assets/images/wolf.webp', word: 'Wolf' },
+                { id: 4, src: '/assets/images/public/assets/images/snow_white.jpeg', word: 'Snow White' },
             ]
         }
     },
@@ -123,13 +123,161 @@ const fairyTales = [
     { "PronunciationGame": { text: "Beanstalk" } },
     { "PronunciationGame": { text: "Wolf" } },
     { "PronunciationGame": { text: "Snow White" } },
-    { "PuzzleImageGame": { imgLink: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Cinderella_carriage.jpg", key: "Cinderella" } },
-    { "PuzzleImageGame": { imgLink: "https://upload.wikimedia.org/wikipedia/commons/6/64/Jack_and_giant.jpg", key: "Jack" } },
-    { "PuzzleImageGame": { imgLink: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Big_bad_wolf.jpg", key: "Wolf" } },
-    { "PuzzleImageGame": { imgLink: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Snow_White_dwarfs.jpg", key: "Snow White" } }
+    { "PuzzleImageGame": { imgLink: "/assets/images/cindrellatext.jpg", key: "Cinderella" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/pandatext.jpg", key: "Kungfu Panda" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/big_bad_wolftext.jpg", key: "Wolf" } },
+    { "PuzzleImageGame": { imgLink: "/assets/images/snow_whitetext.png", key: "Snow White" } }
 ];
 
-const weather = [];
+const weather = [
+    {
+        "WordSortGame": {
+            "text": "A thunderstorm is characterized by lightning and thunder."
+        }
+    },
+    {
+        "WordSortGame": {
+            "text": "A tornado is a rapidly rotating column of air in contact with the ground."
+        }
+    },
+    {
+        "WordSortGame": {
+            "text": "Hailstones are balls of ice that fall from the sky during certain storms."
+        }
+    },
+    {
+        "WordSortGame": {
+            "text": "A hurricane is a powerful tropical storm with strong winds and heavy rain."
+        }
+    },
+    {
+        "WordImageGame": {
+            "initialWords": ["Thunderstorm", "Tornado", "Hail", "Wind"],
+            "initialImages": [
+                {
+                    "id": 1,
+                    "src": "/assets/images/thunderstorm.jpg",
+                    "word": "Thunderstorm"
+                },
+                {
+                    "id": 2,
+                    "src": "/assets/images/tornado.jpg",
+                    "word": "Tornado"
+                },
+                {
+                    "id": 3,
+                    "src": "/assets/images/hail.webp",
+                    "word": "Hail"
+                },
+                {
+                    "id": 4,
+                    "src": "/assets/images/wind.jpg",
+                    "word": "Wind"
+                }
+            ]
+        }
+    },
+    {
+        "WordImageGame": {
+            "initialWords": ["Rain", "Rainbow", "Snow", "Hot day"],
+            "initialImages": [
+                {
+                    "id": 1,
+                    "src": "/assets/images/rain.jpg",
+                    "word": "Rain"
+                },
+                {
+                    "id": 2,
+                    "src": "/assets/images/rainbow.jpg",
+                    "word": "Rainbow"
+                },
+                {
+                    "id": 3,
+                    "src": "/assets/images/snow.jpg",
+                    "word": "Snow"
+                },
+                {
+                    "id": 4,
+                    "src": "/assets/images/hot_day.avif",
+                    "word": "Hot day"
+                }
+            ]
+        }
+    },
+    {
+        "FillInTheBlanksGame": {
+            "sentence": "During a thunderstorm, you can often see flashes of ___.",
+            "correctAnswers": ["lightning"],
+            "allOptions": ["lightning", "snow", "hail", "rain"]
+        }
+    },
+    {
+        "FillInTheBlanksGame": {
+            "sentence": "A ___ can cause significant damage with its high-speed winds.",
+            "correctAnswers": ["tornado"],
+            "allOptions": ["tornado", "rainbow", "cloud", "drizzle"]
+        }
+    },
+    {
+        "FillInTheBlanksGame": {
+            "sentence": "___ often forms when sunlight passes through raindrops.",
+            "correctAnswers": ["A rainbow"],
+            "allOptions": ["A rainbow", "Hail", "Fog", "Snow"]
+        }
+    },
+    {
+        "FillInTheBlanksGame": {
+            "sentence": "___ is frozen precipitation that can damage crops and property.",
+            "correctAnswers": ["Hail"],
+            "allOptions": ["Hail", "Rain", "Sleet", "Mist"]
+        }
+    },
+    {
+        "PronunciationGame": {
+            "text": "Thunderstorm"
+        }
+    },
+    {
+        "PronunciationGame": {
+            "text": "Tornado"
+        }
+    },
+    {
+        "PronunciationGame": {
+            "text": "Hurricane"
+        }
+    },
+    {
+        "PronunciationGame": {
+            "text": "Lightning"
+        }
+    },
+    {
+        "PuzzleImageGame": {
+            "imgLink": "/assets/images/stormtext.avif",
+            "key": "Storm"
+        }
+    },
+    {
+        "PuzzleImageGame": {
+            "imgLink": "/assets/images/tornadotext.webp",
+            "key": "Tornado"
+        }
+    },
+    {
+        "PuzzleImageGame": {
+            "imgLink": "/assets/images/hurricanetext.webp",
+            "key": "Hurricane"
+        }
+    },
+    {
+        "PuzzleImageGame": {
+            "imgLink": "/assets/images/hot_daytext.avif",
+            "key": "Hotday"
+        }
+    }
+
+];
 const plantsAndNatures = [];
 const transportation = [];
 const holidaysAndCelebration = [];
