@@ -9,6 +9,7 @@ import { Data } from '../../utils/Data';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Flex, Input } from 'antd';
 import { DownloadOutlined, HomeOutlined } from '@ant-design/icons';
+import html2canvas from 'html2canvas';
 
 function Game() {
     const { contentName } = useParams();
@@ -16,8 +17,8 @@ function Game() {
     const [gameIndex, setGameIndex] = useState(0);
     const [isGameFinished, setIsGameFinished] = useState(false);
     const [userName, setUserName] = useState('');
-    const canvasRef = useRef(null);
     const navigate = useNavigate()
+    const certificateRef = useRef(null);
 
     // Shuffle qilish funksiyasi
     useEffect(() => {
@@ -47,52 +48,21 @@ function Game() {
         }
     };
 
-    // Sertifikatni chizish
-    const drawCertificate = () => {
-        const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
-
-        // Canvas o‘lchami
-        canvas.width = 800;
-        canvas.height = 600;
-
-        // Orqa fon
-        ctx.fillStyle = '#fff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        // Ramka
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 5;
-        ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
-
-        // Sarlavha
-        ctx.font = 'bold 40px Arial';
-        ctx.fillStyle = '#333';
-        ctx.textAlign = 'center';
-        ctx.fillText('Sertifikat bilan taqdirlanadi', canvas.width / 2, 120);
-
-        // Foydalanuvchi ismi
-        ctx.font = 'bold 30px Arial';
-        ctx.fillText(userName, canvas.width / 2, 220);
-
-        // Pastki matn
-        ctx.font = '20px Arial';
-        ctx.fillText('ushbu mavzuni muvaffaqiyatli tugatganligi uchun!', canvas.width / 2, 300);
-
-        // Sana
-        ctx.font = '16px Arial';
-        const date = new Date().toLocaleDateString();
-        ctx.fillText(`Date: ${date}`, canvas.width / 2, 400);
-    };
-
-    // Sertifikatni yuklab olish
     const downloadCertificate = () => {
-        drawCertificate();
-        const canvas = canvasRef.current;
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL('image/png');
-        link.download = 'certificate.png';
-        link.click();
+        if (certificateRef.current) {
+            html2canvas(certificateRef.current, {
+                scale: 1, // Sifatni yaxshilash
+                width: 1754, // A4 eni
+                height: 1240, // A4 bo‘yi
+                useCORS: true // Agar tashqi rasmlar bo‘lsa, CORS muammolarini oldini olish
+            }).then((canvas) => {
+                const link = document.createElement("a");
+                link.href = canvas.toDataURL("image/png");
+                link.download = "certificate.png";
+                link.click();
+            });
+            setUserName("");
+        }
     };
 
     // Hozirgi o‘yinni chiqarish
@@ -117,7 +87,6 @@ function Game() {
                             Bosh sahifa
                         </Button>
                     </Flex>
-                    <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
                 </div>
             );
         }
@@ -146,6 +115,12 @@ function Game() {
     return (
         <div className='game-container'>
             <div className="game-content">
+                <div className="hidden">
+                    <div ref={certificateRef} className="certificate">
+                        <h1 className='certificate-own'>{userName}</h1>
+                        <p className='certificate-theme'>{contentName}</p>
+                    </div>
+                </div>
                 {renderGame()}
             </div>
         </div>

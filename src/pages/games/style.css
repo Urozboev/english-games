@@ -13,3 +13,39 @@
     background-color: rgb(255, 255, 255, 0.5);
     border-radius: 10px;
 }
+
+.hidden {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.certificate {
+    width: 1754px;
+    height: 1240px;
+    position: relative;
+    background: url('./certificate.png') no-repeat center center / contain;
+}
+
+.certificate-own {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px !important;
+    font-weight: 900;
+}
+
+.certificate-theme {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    position: absolute;
+    top: calc(50% + 140px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: underline;
+}
